@@ -40,7 +40,19 @@ class LBankExchange(
 
     override fun getRecentCandles(symbol: String, interval: String, limit: Int): List<Candle> {
         val nowSeconds = System.currentTimeMillis() / 1000
-        val lbankType = when (interval.lowercase()) { "1m" -> "minute1", "5m" -> "minute5", "15m" -> "minute15", "30m" -> "minute30", "1h" -> "hour1", "4h" -> "hour4", "8h" -> "hour8", "12h" -> "hour12", "1d" -> "day1", "1w" -> "week1", else -> "hour4" }
+        val lbankType = when (interval.lowercase()) {
+            "1m" -> "minute1"
+            "5m" -> "minute5"
+            "15m" -> "minute15"
+            "30m" -> "minute30"
+            "1h" -> "hour1"
+            "4h" -> "hour4"
+            "8h" -> "hour8"
+            "12h" -> "hour12"
+            "1d" -> "day1"
+            "1w" -> "week1"
+            else -> "hour4"
+        }
         val url = "$baseUrl/v2/kline.do?symbol=${toLbankSymbol(symbol)}&size=$limit&type=$lbankType&time=$nowSeconds"
         val request = Request.Builder().url(url).build()
         ExchangeHttp.client.newCall(request).execute().use { response ->

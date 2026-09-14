@@ -38,7 +38,21 @@ class KuCoinExchange(
     }
 
     override fun getRecentCandles(symbol: String, interval: String, limit: Int): List<Candle> {
-        val kucoinType = when (interval.lowercase()) { "1m" -> "1min", "5m" -> "5min", "15m" -> "15min", "30m" -> "30min", "1h" -> "1hour", "2h" -> "2hour", "4h" -> "4hour", "6h" -> "6hour", "8h" -> "8hour", "12h" -> "12hour", "1d" -> "1day", "1w" -> "1week", else -> interval }
+        val kucoinType = when (interval.lowercase()) {
+            "1m" -> "1min"
+            "5m" -> "5min"
+            "15m" -> "15min"
+            "30m" -> "30min"
+            "1h" -> "1hour"
+            "2h" -> "2hour"
+            "4h" -> "4hour"
+            "6h" -> "6hour"
+            "8h" -> "8hour"
+            "12h" -> "12hour"
+            "1d" -> "1day"
+            "1w" -> "1week"
+            else -> interval
+        }
         val url = "$baseUrl/api/v1/market/candles?type=$kucoinType&symbol=${toKucoinSymbol(symbol)}"
         val request = Request.Builder().url(url).build()
         ExchangeHttp.client.newCall(request).execute().use { response ->

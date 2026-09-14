@@ -24,7 +24,20 @@ class BybitExchange(
     }
 
     override fun getRecentCandles(symbol: String, interval: String, limit: Int): List<Candle> {
-        val bybitInterval = when (interval.lowercase()) { "1m" -> "1", "5m" -> "5", "15m" -> "15", "30m" -> "30", "1h" -> "60", "2h" -> "120", "4h" -> "240", "6h" -> "360", "12h" -> "720", "1d" -> "D", "1w" -> "W", else -> interval }
+        val bybitInterval = when (interval.lowercase()) {
+            "1m" -> "1"
+            "5m" -> "5"
+            "15m" -> "15"
+            "30m" -> "30"
+            "1h" -> "60"
+            "2h" -> "120"
+            "4h" -> "240"
+            "6h" -> "360"
+            "12h" -> "720"
+            "1d" -> "D"
+            "1w" -> "W"
+            else -> interval
+        }
         val url = "$baseUrl/v5/market/kline?category=spot&symbol=$symbol&interval=$bybitInterval&limit=$limit"
         val request = Request.Builder().url(url).build()
         ExchangeHttp.client.newCall(request).execute().use { response ->
