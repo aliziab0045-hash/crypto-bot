@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ربات معاملاتی اسکالپینگ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اتصال به تلگرام (اختیاری)"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/telegramTokenInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="توکن ربات تلگرام (از BotFather)" />
+
+        <EditText
+            android:id="@+id/telegramChatIdInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chat ID تلگرام"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ربات ۱"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/exchangeInput1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="نام صرافی (binance / bybit / kucoin / nobitex / toobit / lbank)" />
+
+        <EditText
+            android:id="@+id/symbolInput1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="جفت ارز؛ چند تا رو با کاما جدا کن، مثلاً BTCUSDT,ETHUSDT,DOTUSDT" />
+
+        <EditText
+            android:id="@+id/apiKeyInput1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="API Key"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/apiSecretInput1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="API Secret"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/passphraseInput1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Passphrase (فقط برای KuCoin لازم است)"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/startButton1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="شروع" />
+
+            <Button
+                android:id="@+id/stopButton1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="توقف" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/statusText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="وضعیت: متوقف شده"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pnlText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="سود/زیان تجمعی: 0.00" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="لاگ زنده:"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/logScroll1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#F0F0F0"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/logText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textIsSelectable="true"
+                android:text="" />
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="تاریخچه معاملات:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/historyText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F8F8"
+            android:padding="8dp"
+            android:text="هنوز معامله‌ای ثبت نشده" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CCCCCC"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ربات ۲ (اختیاری - برای اجرای هم‌زمان روی صرافی دیگه)"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/exchangeInput2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="نام صرافی (binance / bybit / kucoin / nobitex / toobit / lbank)" />
+
+        <EditText
+            android:id="@+id/symbolInput2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="جفت ارز؛ چند تا رو با کاما جدا کن، مثلاً BTCUSDT,ETHUSDT,DOTUSDT" />
+
+        <EditText
+            android:id="@+id/apiKeyInput2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="API Key"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/apiSecretInput2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="API Secret"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/passphraseInput2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Passphrase (فقط برای KuCoin لازم است)"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/startButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="شروع" />
+
+            <Button
+                android:id="@+id/stopButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="توقف" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/statusText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="وضعیت: متوقف شده"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pnlText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="سود/زیان تجمعی: 0.00" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="لاگ زنده:"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/logScroll2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#F0F0F0"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/logText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textIsSelectable="true"
+                android:text="" />
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="تاریخچه معاملات:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/historyText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F8F8"
+            android:padding="8dp"
+            android:text="هنوز معامله‌ای ثبت نشده" />
+
+    </LinearLayout>
+</ScrollView>
